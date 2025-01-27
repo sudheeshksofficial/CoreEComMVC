@@ -7,7 +7,7 @@ namespace CoreEComMVC
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
-            app.MapGet("/", () => "Student user modified");
+            app.MapGet("/", () => "Main user modified");
 
             app.Run();
         }
