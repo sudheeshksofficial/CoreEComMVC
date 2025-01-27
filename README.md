@@ -9,5 +9,7 @@ This is a completed .net core mvc project which may contain additional features 
 7,dependency injection
 8,asynchronous views
 
+and others
+
 first merge contains only the packages installed that are required for this project.
 

@@ -7,7 +7,7 @@ namespace CoreEComMVC
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
-            app.MapGet("/", () => "Required packages added");
+            app.MapGet("/", () => "Folders added");
 
             app.Run();
         }
