@@ -20,8 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-grid.css" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-reboot.css" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-utilities.css" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap.css" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.js" />
   </ItemGroup>
 
 </Project>
