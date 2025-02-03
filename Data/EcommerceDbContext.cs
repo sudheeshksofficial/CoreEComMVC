@@ -7,6 +7,7 @@ namespace CoreEComMVC.Data
     {
         public EcommerceDbContext(DbContextOptions<EcommerceDbContext> options) : base(options) { }
 
-        DbSet<ItemModel> Items {  get; set; }
+        public DbSet<ItemModel> Items {  get; set; }
+        public DbSet<CartModel> Cart { get; set; }
     }
 }

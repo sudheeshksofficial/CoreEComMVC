@@ -7,15 +7,17 @@
     <link rel="icon" href=@Url.Action("~/sample.ico") />
     <title>@ViewData["title"]</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a asp-controller="Item" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Item" asp-action="Showing">Purchase</a></li>
+                <li><a asp-controller="Item" asp-action="Addingstock">Add Stock</a></li>
+                <li><a asp-controller="Item" asp-action="GettingCart">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -27,5 +29,6 @@
     <footer>
         <p>&copy; @DateTime.Now.Year - My ASP.NET Core Application</p>
     </footer>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CoreEComMVC.Models.CartModel>
+
+<h1>Your Cart</h1>
+
+<link href="~/css/Showing.css" rel="stylesheet" />
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>₹@item.Price</td>
+                    <td>@item.Quantity</td>
+                    <td>₹@(item.Quantity * item.Price)</td>
+                    <td>
+                        <button class="btn btn-danger remove-from-cart" data-id="@item.CartId">Remove</button>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="3" class="text-right font-weight-bold">Total Amount to Pay</td>
+                <td colspan="2" class="font-weight-bold">₹@Model.Sum(item => item.Quantity * item.Price)</td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No data to display</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="~/js/RemoveCart.js"></script>
+
+
+
+<form asp-action="GoToPayment" method="post">
+    @if (Model.Any())
+    {
+        <input type="hidden" name="totalAmount" value="@Model.Sum(item => item.Quantity * item.Price)" />
+    }
+    <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+</form>
+
+
+
+
+
+
+<style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    table {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .btn-primary {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+
+
